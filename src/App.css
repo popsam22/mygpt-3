@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: var(--color-bg); /* css variable for bg color */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+.gradient__bg {
+        
+  background:-moz-linear-gradient(90deg, rgba(255, 102, 255, 1) 0%, rgba(1, 209, 255, 1) 100%); 
+
+  /* safari 5.1+,chrome 10+ */
+  background:-webkit-linear-gradient(90deg, rgba(255, 102, 255, 1) 0%, rgba(1, 209, 255, 1) 100%);
+
+  /* opera 11.10+ */
+  background:-o-linear-gradient(90deg, rgba(255, 102, 255, 1) 0%, rgba(1, 209, 255, 1) 100%);
+
+  /* ie 6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01D1FF', endColorstr='#FF66FF', GradientType=0 );
+
+  /* ie 10+ */
+  background:-ms-linear-gradient(90deg, rgba(255, 102, 255, 1) 0%, rgba(1, 209, 255, 1) 100%);
+
+  /* global 94%+ browsers support */
+  background:linear-gradient(90deg, rgba(255, 102, 255, 1) 0%, rgba(1, 209, 255, 1) 100%);
+
+}
+
+.gradient__text {
+  background: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;   /* webkit to work on all browsers */
+  -webkit-animation-fill-color: transparent ;
+}
+
+.section__padding {
+  padding: 4rem 6rem;
+}
+
+.section__margin {
+  margin: 4rem 6rem;
+}
+
+.scale-up-bottom {
+	-webkit-animation: scale-up-bottom 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-bottom 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+ @-webkit-keyframes scale-up-bottom {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+  }
+}
+@keyframes scale-up-bottom {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+/* for tablets and middle sized screens */
+ @media screen and (max-width: 720px){
+    .section__padding{
+      padding: 4rem ;
+    }
 
-.App-link {
-  color: #61dafb;
-}
+    .section__margin{
+        margin: 4rem ;
+    }
+ }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* for mobile devices and small screens */
+ @media screen and (max-width: 540px){
+  .section__padding{
+    padding: 4rem 2rem ;
   }
-  to {
-    transform: rotate(360deg);
+
+  .section__margin{
+      margin: 4rem ;
   }
 }
